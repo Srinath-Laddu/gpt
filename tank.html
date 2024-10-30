@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rest Place</title>
+    <style>
+        /* Resetting default margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Styling the header */
+        header {
+            background: linear-gradient(to right, #4CAF50, #008CBA);
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            animation: fadeBg 5s infinite alternate;
+        }
+
+        @keyframes fadeBg {
+            0% { background: linear-gradient(to right, #4CAF50, #008CBA); }
+            50% { background: linear-gradient(to right, #008CBA, #4CAF50); }
+            100% { background: linear-gradient(to right, #4CAF50, #008CBA); }
+        }
+
+        h1 {
+            font-size: 2rem;
+            animation: scaleText 2s infinite alternate, changeColor 3s infinite alternate;
+        }
+
+        @keyframes scaleText {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+
+        @keyframes changeColor {
+            0% { color: #fff; }
+            50% { color: #ff0; }
+            100% { color: #fff; }
+        }
+
+        /* Styling the main content */
+        main {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        img:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>JUST A PLACE TO TAKE SOME REST...</h1>
+    </header>
+    <main>
+        <img src="rest2.jpg" alt="Tank Image" id="rest-image">
+    </main>
+    <script>
+        // JavaScript for additional effects
+        const restImage = document.getElementById('rest-image');
+        restImage.addEventListener('click', function() {
+            this.style.filter = "grayscale(100%)";
+        });
+    </script>
+</body>
+</html>
