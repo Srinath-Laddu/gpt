@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drawing Lab</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f0f0;
+            position: relative; /* Add position relative to body */
+        }
+        .header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 32px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: bold; /* Make the heading bold */
+            width: 100%; /* Set the width to 100% */
+            z-index: 1000;
+            animation: fadeInDownHeader 2s ease-out;
+        }
+        @keyframes fadeInDownHeader {
+            from {
+                opacity: 0;
+                transform: translateY(-100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .container {
+            margin-top: 100px;
+            text-align: center;
+        }
+        .content {
+            max-width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            animation: zoomInContent 2s ease-out;
+        }
+        @keyframes zoomInContent {
+            from {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        .content img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .content p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #333;
+            text-align: left;
+            margin-bottom: 20px;
+            animation: colorChangePara 3s infinite alternate ease-in-out;
+        }
+        @keyframes colorChangePara {
+            0% {
+                color: #ff0000;
+            }
+            50% {
+                color: #00ff00;
+            }
+            100% {
+                color: #0000ff;
+            }
+        }
+        .container img:last-child {
+            max-width: 80%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border: 2px solid #333; /* Add border */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add box shadow */
+        }
+        .footer {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            animation: footerAnimation 3s infinite alternate;
+        }
+        @keyframes footerAnimation {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-10px);
+            }
+        }
+        @media screen and (max-width: 768px) {
+            .header {
+                font-size: 24px;
+            }
+            .content {
+                max-width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header" id="header">
+        Engineering Drawing Labs
+    </div>
+    <div class="container">
+        <div class="content">
+            <img src="draw.jpg" alt="Computer Science Engineering Block">
+           <p>Welcome to the Engineering Drawing Lab of Government Polytechnic College Masab Tank. Our Engineering Drawing Lab is equipped with state-of-the-art facilities and resources to support the practical learning of engineering design and drafting principles.</p>
+<p>The lab provides students with hands-on experience in creating and interpreting technical drawings, blueprints, and schematics used in various engineering disciplines. Equipped with drawing boards, drafting tools, and computer-aided design (CAD) software, students have the opportunity to develop their skills in drafting, detailing, and visualization.</p>
+<p>Under the guidance of experienced faculty members, students learn to communicate engineering ideas effectively through graphical representation. They gain proficiency in using industry-standard software tools and techniques essential for modern engineering practices.</p>
+<p>Our Engineering Drawing Lab plays a crucial role in the education and training of future engineers, providing them with the necessary skills and competencies to excel in their careers. It serves as a hub for creativity, innovation, and problem-solving, preparing students for real-world challenges in the field of engineering.</p>
+ <img src="clg3.png" alt="Second Image">
+        </div>
+    </div>
+    <div class="footer">
+        <p style="font-size: 16px;">Made by: <br> E.Srinath <br> 22001-CS-018</p>
+    </div>
+    <script>
+        window.onload = function() {
+            var header = document.getElementById('header');
+            var paragraph1 = document.getElementById('paragraph1');
+            var paragraph2 = document.getElementById('paragraph2');
+            var paragraph3 = document.getElementById('paragraph3');
+            var paragraph4 = document.getElementById('paragraph4');
+
+            function changeColor(element) {
+                var colors = ['#ff0000', '#00ff00', '#0000ff']; // Array of colors
+                var currentIndex = 0; // Current index of color
+
+                // Change color every 2 seconds
+                setInterval(function() {
+                    element.style.color = colors[currentIndex]; // Set the color
+                    currentIndex = (currentIndex + 1) % colors.length; // Increment index
+                }, 2000);
+            }
+
+            changeColor(header);
+            changeColor(paragraph1);
+            changeColor(paragraph2);
+            changeColor(paragraph3);
+            changeColor(paragraph4);
+        };
+    </script>
+</body>
+</html>
