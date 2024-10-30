@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Showcase</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .college-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .college-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+        .college-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="college-container">
+        <div class="college-card" onclick="openLink('link1.html')">
+            <img src="college1.png" alt="College 1" usemap="#college1map">
+            <map name="college1map">
+                <area shape="rect" coords="0,0,125,250" alt="Link 1" href="link1.html">
+                <area shape="rect" coords="125,0,250,250" alt="Link 2" href="link2.html">
+            </map>
+        </div>
+        
+        <!-- Add more college cards as needed -->
+    </div>
+
+    <script>
+        function openLink(url) {
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>

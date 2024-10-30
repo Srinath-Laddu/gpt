@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clickable Image</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding-top: 60px; /* Adjust this value according to your header's height */
+        }
+        .image-container img {
+            display: block;
+            margin: 0 auto; /* Center align */
+            max-width: 100%;
+            height: auto;
+        }
+        .header {
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            z-index: 1000;
+            transition: background-color 0.3s ease;
+        }
+        .header:hover {
+            background-color: #555;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            animation: fadeInDown 2s ease-out;
+        }
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .header h1:hover {
+            text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+        }
+        .container {
+            padding-top: 80px;
+            text-align: center;
+        }
+        .content {
+            font-size: 18px;
+            line-height: 1.6;
+            margin: 50px auto;
+            max-width: 600px;
+            padding: 0 20px;
+        }
+        .content img {
+            max-width: 100%;
+            height: auto;
+        }
+        .footer {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            z-index: 1000;
+        }
+
+        @keyframes footerAnimation {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-10px);
+            }
+        }
+        @media screen and (max-width: 768px) {
+            .header {
+                font-size: 24px;
+            }
+            .content {
+                max-width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Outline of Government Polytechnic College, Masab Tank</h1>
+    </div>
+    <div class="image-container">
+        <img src="college1.png" alt="Large Image" usemap="#image-map">
+        <map name="image-map">
+            <!-- Define clickable areas within the image -->
+            <area shape="rect" coords="30,22,144,73" title="workshop1" href="workshop.html">
+            <area shape="rect" coords="261,19,375,69" title="workshop2" href="workshop.html">
+            <area shape="rect" coords="680,393,904,460" title="workshop3" href="workshop.html">
+            <area shape="rect" coords="1001,255,1095,403" title="workshop4" href="workshop.html">
+            <area shape="rect" coords="616,119,699,186" title="canteen" href="canteen.html">
+            <area shape="rect" coords="700,20,920,78" title="drawing lab" href="draw.html">
+            <area shape="rect" coords="11,243,122,405" title="play ground" href="ground.html">
+            <area shape="rect" coords="10,120,101,175" title="girls hostel" href="ghost.html">
+            <area shape="rect" coords="12,446,121,545" title="sbtet office" href="sbtet.html">
+            <area shape="rect" coords="668,515,764,602" title="alumini building" href="alumini.html">
+            <area shape="rect" coords="620,260,710,345" title="sittable water tank" href="tank.html">
+            <area shape="poly" coords="195,313,197,527,273,528,274,565,376,566,378,526,454,527,454,314" title="main block" href="main.html">
+            <area shape="poly" coords="237,162,236,179,191,183,192,241,350,242,350,181,296,181,300,160" title="cse block" href="cse.html">
+        </map>
+    </div>
+    <h4 id="info" align="center">Welcome to GPT Masab Tank Hyderabad. the above image is the outline of this college. Click on those Landmarks, Places, Buildings, Blocks to know further information about it.</h4>
+     <div class="footer">
+        <p style="font-size: 16px;">Made by: <br> E.Srinath <br> 22001-CS-018</p>
+    </div>
+    <script>
+        window.onload = function() {
+            var img = document.querySelector('.image-container img');
+
+            function scaleCoords() {
+                var originalWidth = img.naturalWidth; // Original image width
+                var currentWidth = img.offsetWidth; // Current image width
+                var scale = currentWidth / originalWidth; // Calculate scale
+
+                document.querySelectorAll('area').forEach(function(area) {
+                    var originalCoords = area.dataset.originalCoords.split(','); // Get the original coordinates
+                    var scaledCoords = originalCoords.map(coord => Math.round(coord * scale)); // Scale coordinates
+                    area.coords = scaledCoords.join(','); // Set the new coordinates
+                });
+            }
+
+            document.querySelectorAll('area').forEach(function(area) {
+                area.dataset.originalCoords = area.coords;
+            });
+
+            scaleCoords();
+            window.addEventListener('resize', scaleCoords);
+
+            // Function to change color of the h4 header dynamically
+            function changeHeaderColor() {
+                var colors = ['#ff0000', '#00ff00', '#0000ff']; // Array of colors
+                var currentIndex = 0; // Current index of color
+                var header = document.getElementById('info'); // Select the h4 element
+
+                // Change color every 2 seconds
+                setInterval(function() {
+                    header.style.color = colors[currentIndex]; // Set the color
+                    currentIndex = (currentIndex + 1) % colors.length; // Increment index
+                }, 2000);
+            }
+
+            changeHeaderColor(); // Call the function to start changing the color
+        };
+    </script>
+</body>
+</html>
