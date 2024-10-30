@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Science Engineering Block</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f0f0;
+            position: relative; /* Add position relative to body */
+        }
+        .header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 32px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: bold; /* Make the heading bold */
+            width: 100%; /* Set the width to 100% */
+            z-index: 1000;
+            animation: fadeInDownHeader 2s ease-out;
+        }
+        @keyframes fadeInDownHeader {
+            from {
+                opacity: 0;
+                transform: translateY(-100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .container {
+            margin-top: 100px;
+            text-align: center;
+        }
+        .content {
+            max-width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            animation: zoomInContent 2s ease-out;
+        }
+        @keyframes zoomInContent {
+            from {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        .content img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .content p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #333;
+            text-align: left;
+            margin-bottom: 20px;
+            animation: colorChangePara 3s infinite alternate ease-in-out;
+        }
+        @keyframes colorChangePara {
+            0% {
+                color: #ff0000;
+            }
+            50% {
+                color: #00ff00;
+            }
+            100% {
+                color: #0000ff;
+            }
+        }
+        .container img:last-child {
+            max-width: 80%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border: 2px solid #333; /* Add border */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add box shadow */
+        }
+        .footer {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            animation: footerAnimation 3s infinite alternate;
+        }
+        @keyframes footerAnimation {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-10px);
+            }
+        }
+        @media screen and (max-width: 768px) {
+            .header {
+                font-size: 24px;
+            }
+            .content {
+                max-width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header" id="header">
+        Computer Science Engineering Block
+    </div>
+    <div class="container">
+        <div class="content">
+            <img src="cse.jfif" alt="Computer Science Engineering Block">
+            <p id="paragraph1">Welcome to the Computer Science Engineering Block of GPT Masab Tank. Here, you'll find state-of-the-art facilities for computer science education and research. Our block is equipped with modern laboratories, classrooms, and seminar halls to facilitate learning and innovation.</p>
+            <p id="paragraph2">At the Computer Science Engineering Block, we aim to provide students with a comprehensive education in computer science, covering areas such as programming, algorithms, data structures, artificial intelligence, and more. Our experienced faculty members are dedicated to nurturing talent and guiding students towards successful careers in the field of technology.</p>
+            <p id="paragraph3">Whether you're a prospective student, a current student, or a visitor, we invite you to explore our block and experience the dynamic learning environment it offers. Feel free to reach out to us for any inquiries or to schedule a visit.</p>
+            <p id="paragraph4">**Facilities:** Our block is equipped with modern laboratories, classrooms, and seminar halls to facilitate learning and innovation. We have a well-stocked library with a vast collection of books, journals, and online resources to support research and academic endeavors. The block also houses faculty offices, meeting rooms, and administrative offices to ensure smooth functioning of academic and administrative activities.</p>
+            <img src="cse2.jpg" alt="Second Image">
+        </div>
+    </div>
+    <div class="footer">
+        <p style="font-size: 16px;">Made by: <br> E.Srinath <br> 22001-CS-018</p>
+    </div>
+    <script>
+        window.onload = function() {
+            var header = document.getElementById('header');
+            var paragraph1 = document.getElementById('paragraph1');
+            var paragraph2 = document.getElementById('paragraph2');
+            var paragraph3 = document.getElementById('paragraph3');
+            var paragraph4 = document.getElementById('paragraph4');
+
+            function changeColor(element) {
+                var colors = ['#ff0000', '#00ff00', '#0000ff']; // Array of colors
+                var currentIndex = 0; // Current index of color
+
+                // Change color every 2 seconds
+                setInterval(function() {
+                    element.style.color = colors[currentIndex]; // Set the color
+                    currentIndex = (currentIndex + 1) % colors.length; // Increment index
+                }, 2000);
+            }
+
+            changeColor(header);
+            changeColor(paragraph1);
+            changeColor(paragraph2);
+            changeColor(paragraph3);
+            changeColor(paragraph4);
+        };
+    </script>
+</body>
+</html>
