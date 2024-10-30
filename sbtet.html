@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SBTET</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f0f0;
+            position: relative; /* Add position relative to body */
+        }
+        .header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 32px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: bold; /* Make the heading bold */
+            width: 100%; /* Set the width to 100% */
+            z-index: 1000;
+            animation: fadeInDownHeader 2s ease-out;
+        }
+        @keyframes fadeInDownHeader {
+            from {
+                opacity: 0;
+                transform: translateY(-100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .container {
+            margin-top: 100px;
+            text-align: center;
+        }
+        .content {
+            max-width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            animation: zoomInContent 2s ease-out;
+        }
+        @keyframes zoomInContent {
+            from {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        .content img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .content p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #333;
+            text-align: left;
+            margin-bottom: 20px;
+            animation: colorChangePara 3s infinite alternate ease-in-out;
+        }
+        @keyframes colorChangePara {
+            0% {
+                color: #ff0000;
+            }
+            50% {
+                color: #00ff00;
+            }
+            100% {
+                color: #0000ff;
+            }
+        }
+        .container img:last-child {
+            max-width: 80%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border: 2px solid #333; /* Add border */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add box shadow */
+        }
+        .footer {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            animation: footerAnimation 3s infinite alternate;
+        }
+        @keyframes footerAnimation {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-10px);
+            }
+        }
+        @media screen and (max-width: 768px) {
+            .header {
+                font-size: 24px;
+            }
+            .content {
+                max-width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header" id="header">
+        SBTET Office
+    </div>
+    <div class="container">
+        <div class="content">
+            <img src="sbtet1.jpg" alt="Sbtet">
+           <p id="paragraph1">Welcome to the SBTET Office of Government Polytechnic Masab Tank, Hyderabad. Our office serves as the administrative hub for the State Board of Technical Education and Training (SBTET) in the region.</p>
+            <p id="paragraph2">The SBTET Office plays a crucial role in the management and regulation of technical education programs offered by polytechnic colleges in Telangana. We oversee curriculum development, examinations, certification, and other administrative functions related to technical education.</p>
+            <p id="paragraph3">Our dedicated team of administrators and staff are committed to ensuring the quality and integrity of technical education in the state. We strive to provide efficient services to students, faculty, and institutions, while upholding the standards set by the SBTET.</p>
+            <p id="paragraph4">**Services:** The SBTET Office offers a range of services including academic counseling, examination scheduling, certification, accreditation, and more. We also facilitate communication between polytechnic colleges, government agencies, and industry partners to promote collaboration and innovation in technical education.</p>
+           <img src="sbtet2.jpg" alt="Second Image">
+        </div>
+    </div>
+    <div class="footer">
+        <p style="font-size: 16px;">Made by: <br> E.Srinath <br> 22001-CS-018</p>
+    </div>
+    <script>
+        window.onload = function() {
+            var header = document.getElementById('header');
+            var paragraph1 = document.getElementById('paragraph1');
+            var paragraph2 = document.getElementById('paragraph2');
+            var paragraph3 = document.getElementById('paragraph3');
+            var paragraph4 = document.getElementById('paragraph4');
+
+            function changeColor(element) {
+                var colors = ['#ff0000', '#00ff00', '#0000ff']; // Array of colors
+                var currentIndex = 0; // Current index of color
+
+                // Change color every 2 seconds
+                setInterval(function() {
+                    element.style.color = colors[currentIndex]; // Set the color
+                    currentIndex = (currentIndex + 1) % colors.length; // Increment index
+                }, 2000);
+            }
+
+            changeColor(header);
+            changeColor(paragraph1);
+            changeColor(paragraph2);
+            changeColor(paragraph3);
+            changeColor(paragraph4);
+        };
+    </script>
+</body>
+</html>

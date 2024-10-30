@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Block of GPT Masab Tank</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f0f0;
+            position: relative; /* Add position relative to body */
+        }
+        .header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 32px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: bold;
+            width: 100%;
+            z-index: 1000;
+            animation: fadeInDown 2s ease-out;
+        }
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .container {
+            margin-top: 50px;
+            text-align: center;
+        }
+        .content {
+            max-width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            animation: zoomIn 2s ease-out;
+        }
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        .content p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #333;
+            text-align: left;
+            margin-bottom: 20px;
+            animation: colorChangePara 3s infinite alternate ease-in-out;
+        }
+        @keyframes colorChangePara {
+            0% {
+                color: #ff0000;
+            }
+            50% {
+                color: #00ff00;
+            }
+            100% {
+                color: #0000ff;
+            }
+        }
+        .image {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .container img {
+            max-width: 80%; /* Reduce the width of the image */
+        }
+        .footer {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            animation: footerAnimation 3s infinite alternate;
+        }
+        @keyframes footerAnimation {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-10px);
+            }
+        }
+        @media screen and (max-width: 768px) {
+            .header {
+                font-size: 24px;
+            }
+            .content {
+                max-width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header" id="header">
+        Main Block of GPT Masab Tank
+    </div>
+    <div class="container">
+        <img src="clg2.jfif" alt="Main Block Image" class="image">
+        
+        <div class="content">
+            <p id="paragraph">The Main Block of GPT Masab Tank serves as the heart of the campus, housing administrative offices, academic departments, lecture halls, and other essential facilities. It is where students and faculty members converge for various academic and extracurricular activities.</p>
+            <p>The Main Block features well-equipped lecture halls and classrooms, providing an optimal environment for teaching and learning. Additionally, it hosts faculty offices where students can seek guidance and support from experienced educators.</p>
+            <p>Besides academic facilities, the Main Block also accommodates administrative offices responsible for managing campus affairs, student services, and administrative tasks. These offices play a crucial role in ensuring the smooth functioning of the institution.</p>
+            <p>Furthermore, the Main Block often serves as a venue for seminars, workshops, and cultural events, fostering intellectual discourse and promoting cultural exchange among students and faculty members.</p>
+            <p>Overall, the Main Block is a central hub of activity at GPT Masab Tank, providing essential services and facilities to support the academic and extracurricular endeavors of the campus community.</p>
+        </div>
+        <img src="clg3.png" alt="Second Image" class="image">
+    </div>
+    <div class="footer">
+        <p style="font-size: 16px;">Made by: <br> E.Srinath <br> 22001-CS-018</p>
+    </div>
+    <script>
+        window.onload = function() {
+            var header = document.getElementById('header');
+            var paragraph = document.getElementById('paragraph');
+
+            function changeColor(element) {
+                var colors = ['#ff0000', '#00ff00', '#0000ff']; // Array of colors
+                var currentIndex = 0; // Current index of color
+
+                // Change color every 2 seconds
+                setInterval(function() {
+                    element.style.color = colors[currentIndex]; // Set the color
+                    currentIndex = (currentIndex + 1) % colors.length; // Increment index
+                }, 2000);
+            }
+
+            changeColor(header);
+            changeColor(paragraph);
+        };
+    </script>
+</body>
+</html>
